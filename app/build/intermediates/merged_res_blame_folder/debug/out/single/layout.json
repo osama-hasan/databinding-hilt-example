@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/certacure/Desktop/DI/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/custom_tv_show_layout.xml",
+        "source": "/Users/certacure/Desktop/DI/app/src/main/res/layout/custom_tv_show_layout.xml"
+    },
+    {
+        "merged": "/Users/certacure/Desktop/DI/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
+        "source": "/Users/certacure/Desktop/DI/app/src/main/res/layout/activity_main.xml"
+    }
+]
