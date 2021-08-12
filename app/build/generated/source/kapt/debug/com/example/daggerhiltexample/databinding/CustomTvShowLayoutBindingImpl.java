@@ -1,7 +1,6 @@
 package com.example.daggerhiltexample.databinding;
+import com.example.daggerhiltexample.R;
 import com.example.daggerhiltexample.BR;
-import com.example.daggerhiltexample.model.TvShow;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import android.view.View;
@@ -69,7 +68,7 @@ public class CustomTvShowLayoutBindingImpl extends CustomTvShowLayoutBinding  {
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
         if (BR.tvShow == variableId) {
-            setTvShow((TvShow) variable);
+            setTvShow((com.example.daggerhiltexample.model.TvShow) variable);
         }
         else {
             variableSet = false;
@@ -77,7 +76,7 @@ public class CustomTvShowLayoutBindingImpl extends CustomTvShowLayoutBinding  {
             return variableSet;
     }
 
-    public void setTvShow(@Nullable TvShow TvShow) {
+    public void setTvShow(@Nullable com.example.daggerhiltexample.model.TvShow TvShow) {
         this.mTvShow = TvShow;
         synchronized(this) {
             mDirtyFlags |= 0x1L;
@@ -100,7 +99,7 @@ public class CustomTvShowLayoutBindingImpl extends CustomTvShowLayoutBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        TvShow tvShow = mTvShow;
+        com.example.daggerhiltexample.model.TvShow tvShow = mTvShow;
         java.lang.String tvShowName = null;
         java.lang.String tvShowCoverImage = null;
         java.lang.String tvShowStartDate = null;

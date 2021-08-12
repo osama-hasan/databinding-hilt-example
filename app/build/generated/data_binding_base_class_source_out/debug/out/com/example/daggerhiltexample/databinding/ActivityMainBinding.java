@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,10 +18,20 @@ public abstract class ActivityMainBinding extends ViewDataBinding {
   @NonNull
   public final RecyclerView tvRecyclerView;
 
+  @Bindable
+  protected Boolean mIsLoading;
+
   protected ActivityMainBinding(Object _bindingComponent, View _root, int _localFieldCount,
       RecyclerView tvRecyclerView) {
     super(_bindingComponent, _root, _localFieldCount);
     this.tvRecyclerView = tvRecyclerView;
+  }
+
+  public abstract void setIsLoading(@Nullable Boolean isLoading);
+
+  @Nullable
+  public Boolean getIsLoading() {
+    return mIsLoading;
   }
 
   @NonNull

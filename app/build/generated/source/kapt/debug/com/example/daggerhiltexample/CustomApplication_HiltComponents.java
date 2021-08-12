@@ -1,6 +1,8 @@
 package com.example.daggerhiltexample;
 
 import com.example.daggerhiltexample.di.NetworkModel;
+import com.example.daggerhiltexample.ui.ActivityViewModel_HiltModules;
+import com.example.daggerhiltexample.ui.MainActivity_GeneratedInjector;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;

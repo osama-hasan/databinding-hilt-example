@@ -11,11 +11,13 @@ import com.example.daggerhiltexample.di.NetworkModel;
 import com.example.daggerhiltexample.di.NetworkModel_ProvideApiServiceFactory;
 import com.example.daggerhiltexample.di.NetworkModel_ProvideOkHttpClientFactory;
 import com.example.daggerhiltexample.di.NetworkModel_ProvideRetrofitFactory;
+import com.example.daggerhiltexample.network.ApiHelperImpl;
 import com.example.daggerhiltexample.network.ApiService;
+import com.example.daggerhiltexample.network.NetworkHelper;
 import com.example.daggerhiltexample.repo.TvShowsRepo;
 import com.example.daggerhiltexample.ui.ActivityViewModel;
+import com.example.daggerhiltexample.ui.ActivityViewModel_HiltModules_KeyModule_ProvideFactory;
 import com.example.daggerhiltexample.ui.MainActivity;
-
 import dagger.hilt.android.ActivityRetainedLifecycle;
 import dagger.hilt.android.internal.builders.ActivityComponentBuilder;
 import dagger.hilt.android.internal.builders.ActivityRetainedComponentBuilder;
@@ -29,6 +31,7 @@ import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories_Internal
 import dagger.hilt.android.internal.managers.ActivityRetainedComponentManager_Lifecycle_Factory;
 import dagger.hilt.android.internal.modules.ApplicationContextModule;
 import dagger.hilt.android.internal.modules.ApplicationContextModule_ProvideApplicationFactory;
+import dagger.hilt.android.internal.modules.ApplicationContextModule_ProvideContextFactory;
 import dagger.internal.DaggerGenerated;
 import dagger.internal.DoubleCheck;
 import dagger.internal.Preconditions;
@@ -55,6 +58,10 @@ public final class DaggerCustomApplication_HiltComponents_SingletonC extends Cus
 
   private Provider<ApiService> provideApiServiceProvider;
 
+  private Provider<ApiHelperImpl> apiHelperImplProvider;
+
+  private Provider<NetworkHelper> networkHelperProvider;
+
   private DaggerCustomApplication_HiltComponents_SingletonC(
       ApplicationContextModule applicationContextModuleParam) {
     this.applicationContextModule = applicationContextModuleParam;
@@ -74,11 +81,21 @@ public final class DaggerCustomApplication_HiltComponents_SingletonC extends Cus
     return NetworkModel_ProvideApiServiceFactory.provideApiService(provideRetrofitProvider.get());
   }
 
+  private ApiHelperImpl apiHelperImpl() {
+    return new ApiHelperImpl(provideApiServiceProvider.get());
+  }
+
+  private NetworkHelper networkHelper() {
+    return new NetworkHelper(ApplicationContextModule_ProvideContextFactory.provideContext(applicationContextModule));
+  }
+
   @SuppressWarnings("unchecked")
   private void initialize(final ApplicationContextModule applicationContextModuleParam) {
-    this.provideOkHttpClientProvider = DoubleCheck.provider(new SwitchingProvider<OkHttpClient>(singletonC, 2));
-    this.provideRetrofitProvider = DoubleCheck.provider(new SwitchingProvider<Retrofit>(singletonC, 1));
-    this.provideApiServiceProvider = DoubleCheck.provider(new SwitchingProvider<ApiService>(singletonC, 0));
+    this.provideOkHttpClientProvider = DoubleCheck.provider(new SwitchingProvider<OkHttpClient>(singletonC, 3));
+    this.provideRetrofitProvider = DoubleCheck.provider(new SwitchingProvider<Retrofit>(singletonC, 2));
+    this.provideApiServiceProvider = DoubleCheck.provider(new SwitchingProvider<ApiService>(singletonC, 1));
+    this.apiHelperImplProvider = DoubleCheck.provider(new SwitchingProvider<ApiHelperImpl>(singletonC, 0));
+    this.networkHelperProvider = DoubleCheck.provider(new SwitchingProvider<NetworkHelper>(singletonC, 4));
   }
 
   @Override
@@ -435,11 +452,11 @@ public final class DaggerCustomApplication_HiltComponents_SingletonC extends Cus
     }
 
     private TvShowsRepo tvShowsRepo() {
-      return new TvShowsRepo(singletonC.provideApiServiceProvider.get());
+      return new TvShowsRepo(singletonC.apiHelperImplProvider.get());
     }
 
     private ActivityViewModel activityViewModel() {
-      return new ActivityViewModel(tvShowsRepo());
+      return new ActivityViewModel(tvShowsRepo(), singletonC.networkHelperProvider.get());
     }
 
     @SuppressWarnings("unchecked")
@@ -566,14 +583,20 @@ public final class DaggerCustomApplication_HiltComponents_SingletonC extends Cus
     @Override
     public T get() {
       switch (id) {
-        case 0: // com.example.daggerhiltexample.network.ApiService 
+        case 0: // com.example.daggerhiltexample.network.ApiHelperImpl 
+        return (T) singletonC.apiHelperImpl();
+
+        case 1: // com.example.daggerhiltexample.network.ApiService 
         return (T) singletonC.apiService();
 
-        case 1: // retrofit2.Retrofit 
+        case 2: // retrofit2.Retrofit 
         return (T) singletonC.retrofit();
 
-        case 2: // okhttp3.OkHttpClient 
+        case 3: // okhttp3.OkHttpClient 
         return (T) NetworkModel_ProvideOkHttpClientFactory.provideOkHttpClient();
+
+        case 4: // com.example.daggerhiltexample.network.NetworkHelper 
+        return (T) singletonC.networkHelper();
 
         default: throw new AssertionError(id);
       }

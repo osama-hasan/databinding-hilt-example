@@ -2,6 +2,8 @@ package com.example.daggerhiltexample.di
 
 import com.example.daggerhiltexample.network.ApiService
 import com.example.daggerhiltexample.BuildConfig
+import com.example.daggerhiltexample.network.ApiHelper
+import com.example.daggerhiltexample.network.ApiHelperImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -35,7 +37,6 @@ object NetworkModel {
         .build()
 
 
-
     @Provides
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit =
@@ -44,5 +45,9 @@ object NetworkModel {
             .baseUrl("https://www.episodate.com/api/")
             .client(okHttpClient)
             .build()
+
+    @Provides
+    @Singleton
+    fun provideApiHelper(apiHelper: ApiHelperImpl): ApiHelper = apiHelper
 
 }

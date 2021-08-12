@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.daggerhiltexample.model.TvShow
 import com.example.daggerhiltexample.databinding.CustomTvShowLayoutBinding
 
-class TvShowsAdapter(private val shows: List<TvShow>) :
+class TvShowsAdapter(private var shows: List<TvShow>) :
     RecyclerView.Adapter<TvShowsAdapter.TvShowsViewHolder>() {
 
     private lateinit var binding: CustomTvShowLayoutBinding
@@ -20,6 +20,10 @@ class TvShowsAdapter(private val shows: List<TvShow>) :
             }
         }
 
+    }
+
+    fun submitData(shows: List<TvShow>) {
+        this.shows = shows
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TvShowsViewHolder {

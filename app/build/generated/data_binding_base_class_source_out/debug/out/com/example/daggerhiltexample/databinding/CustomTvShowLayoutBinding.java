@@ -12,7 +12,7 @@ import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.example.daggerhiltexample.R;
-import com.example.daggerhiltexample.TvShow;
+import com.example.daggerhiltexample.model.TvShow;
 import java.lang.Deprecated;
 import java.lang.Object;
 

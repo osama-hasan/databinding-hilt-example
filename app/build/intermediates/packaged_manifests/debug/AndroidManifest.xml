@@ -8,6 +8,7 @@
         android:minSdkVersion="23"
         android:targetSdkVersion="30" />
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -23,7 +24,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.DaggerHiltExample"
         android:usesCleartextTraffic="true" >
-        <activity android:name="com.example.daggerhiltexample.MainActivity" >
+        <activity android:name="com.example.daggerhiltexample.ui.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
