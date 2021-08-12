@@ -38,19 +38,24 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun setUpObserver() {
-        viewModel.getTvShows(page).observe(viewLifecycleOwner, {
-            when (it.status) {
-                Status.SUCCESS -> {
-                    binding.isLoading = false
-                    it.data?.let { it1 -> adapter.submitList(it1.tvShows) }
-                }
-                Status.ERROR -> {
-                    binding.isLoading = false
-                }
-                Status.LOADING -> {
-                    binding.isLoading = true
-                    Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
-                }
+//        viewModel.getTvShows(page).observe(viewLifecycleOwner, {
+//            when (it.status) {
+//                Status.SUCCESS -> {
+//                    binding.isLoading = false
+//                    it.data?.let { it1 -> adapter.submitList(it1.tvShows) }
+//                }
+//                Status.ERROR -> {
+//                    binding.isLoading = false
+//                }
+//                Status.LOADING -> {
+//                    binding.isLoading = true
+//                    Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//        })
+        viewModel.getTvShowsLocal().observe(viewLifecycleOwner, {
+            if (it.isNotEmpty()) {
+                adapter.submitList(it)
             }
         })
     }

@@ -124,7 +124,7 @@ public class CustomTvShowLayoutBindingImpl extends CustomTvShowLayoutBinding  {
         if ((dirtyFlags & 0x3L) != 0) {
             // api target 1
 
-            com.example.daggerhiltexample.BindingAdapterKt.loadImage(this.imageView, tvShowCoverImage);
+            com.example.daggerhiltexample.adapters.BindingAdapterKt.loadImage(this.imageView, tvShowCoverImage);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView4, tvShowNetwork);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.textView, tvShowName);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.textView2, tvShowStartDate);

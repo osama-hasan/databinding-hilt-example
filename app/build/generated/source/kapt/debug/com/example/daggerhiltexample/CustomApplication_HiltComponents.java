@@ -1,6 +1,7 @@
 package com.example.daggerhiltexample;
 
-import com.example.daggerhiltexample.di.NetworkModel;
+import com.example.daggerhiltexample.di.NetworkModule;
+import com.example.daggerhiltexample.di.RoomDBModule;
 import com.example.daggerhiltexample.ui.ActivityViewModel_HiltModules;
 import com.example.daggerhiltexample.ui.MainActivity_GeneratedInjector;
 import com.example.daggerhiltexample.ui.home.HomeFragment_GeneratedInjector;
@@ -119,7 +120,8 @@ public final class CustomApplication_HiltComponents {
           ApplicationContextModule.class,
           ActivityRetainedCBuilderModule.class,
           ServiceCBuilderModule.class,
-          NetworkModel.class
+          NetworkModule.class,
+          RoomDBModule.class
       }
   )
   @Singleton

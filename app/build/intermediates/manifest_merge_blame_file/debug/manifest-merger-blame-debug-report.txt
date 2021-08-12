@@ -67,6 +67,15 @@
 39-->[androidx.window:window:1.0.0-alpha09] /Users/certacure/.gradle/caches/transforms-2/files-2.1/ee0cfc62bae944998a20addd59657560/window-1.0.0-alpha09/AndroidManifest.xml:29:13-51
 40            android:required="false" />
 40-->[androidx.window:window:1.0.0-alpha09] /Users/certacure/.gradle/caches/transforms-2/files-2.1/ee0cfc62bae944998a20addd59657560/window-1.0.0-alpha09/AndroidManifest.xml:30:13-37
-41    </application>
-42
-43</manifest>
+41
+42        <service
+42-->[androidx.room:room-runtime:2.4.0-alpha04] /Users/certacure/.gradle/caches/transforms-2/files-2.1/061084714184d3957596ab8b9ada18e9/room-runtime-2.4.0-alpha04/AndroidManifest.xml:25:9-28:40
+43            android:name="androidx.room.MultiInstanceInvalidationService"
+43-->[androidx.room:room-runtime:2.4.0-alpha04] /Users/certacure/.gradle/caches/transforms-2/files-2.1/061084714184d3957596ab8b9ada18e9/room-runtime-2.4.0-alpha04/AndroidManifest.xml:26:13-74
+44            android:directBootAware="true"
+44-->[androidx.room:room-runtime:2.4.0-alpha04] /Users/certacure/.gradle/caches/transforms-2/files-2.1/061084714184d3957596ab8b9ada18e9/room-runtime-2.4.0-alpha04/AndroidManifest.xml:27:13-43
+45            android:exported="false" />
+45-->[androidx.room:room-runtime:2.4.0-alpha04] /Users/certacure/.gradle/caches/transforms-2/files-2.1/061084714184d3957596ab8b9ada18e9/room-runtime-2.4.0-alpha04/AndroidManifest.xml:28:13-37
+46    </application>
+47
+48</manifest>

@@ -1,4 +1,4 @@
-#Thu Aug 12 13:09:28 EEST 2021
+#Thu Aug 12 16:11:52 EEST 2021
 path.4=11/classes.dex
 path.3=10/classes.dex
 path.2=1/classes.dex
@@ -8,6 +8,7 @@ renamed.8=classes9.dex
 path.8=4/classes.dex
 path.7=2/classes.dex
 path.6=15/classes.dex
+renamed.12=classes13.dex
 path.5=14/classes.dex
 renamed.11=classes12.dex
 renamed.10=classes11.dex
@@ -18,6 +19,7 @@ base.2=/Users/certacure/Desktop/DI/app/build/intermediates/dex/debug/mergeProjec
 base.1=/Users/certacure/Desktop/DI/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.0=/Users/certacure/Desktop/DI/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 renamed.3=classes4.dex
+path.12=classes2.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 path.10=7/classes.dex
@@ -33,5 +35,6 @@ renamed.5=classes6.dex
 base.6=/Users/certacure/Desktop/DI/app/build/intermediates/dex/debug/mergeProjectDexDebug/15/classes.dex
 renamed.4=classes5.dex
 base.5=/Users/certacure/Desktop/DI/app/build/intermediates/dex/debug/mergeProjectDexDebug/14/classes.dex
+base.12=/Users/certacure/Desktop/DI/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
 base.11=/Users/certacure/Desktop/DI/app/build/intermediates/dex/debug/mergeProjectDexDebug/9/classes.dex
 base.10=/Users/certacure/Desktop/DI/app/build/intermediates/dex/debug/mergeProjectDexDebug/7/classes.dex

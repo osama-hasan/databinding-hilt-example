@@ -7,10 +7,15 @@ import android.view.View;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.SavedStateHandle;
 import androidx.lifecycle.ViewModel;
-import com.example.daggerhiltexample.di.NetworkModel;
-import com.example.daggerhiltexample.di.NetworkModel_ProvideApiServiceFactory;
-import com.example.daggerhiltexample.di.NetworkModel_ProvideOkHttpClientFactory;
-import com.example.daggerhiltexample.di.NetworkModel_ProvideRetrofitFactory;
+import com.example.daggerhiltexample.db.DataBaseHelperImpl;
+import com.example.daggerhiltexample.di.NetworkModule;
+import com.example.daggerhiltexample.di.NetworkModule_ProvideApiServiceFactory;
+import com.example.daggerhiltexample.di.NetworkModule_ProvideOkHttpClientFactory;
+import com.example.daggerhiltexample.di.NetworkModule_ProvideRetrofitFactory;
+import com.example.daggerhiltexample.di.RoomDBModule;
+import com.example.daggerhiltexample.di.RoomDBModule_ProvideAppDatabaseFactory;
+import com.example.daggerhiltexample.di.RoomDBModule_ProvideDatabaseNameFactory;
+import com.example.daggerhiltexample.di.RoomDBModule_ProvideTvShowsDAOFactory;
 import com.example.daggerhiltexample.network.ApiHelperImpl;
 import com.example.daggerhiltexample.network.ApiService;
 import com.example.daggerhiltexample.network.NetworkHelper;
@@ -61,6 +66,8 @@ public final class DaggerCustomApplication_HiltComponents_SingletonC extends Cus
 
   private Provider<ApiHelperImpl> apiHelperImplProvider;
 
+  private Provider<AppDatabase> provideAppDatabaseProvider;
+
   private Provider<NetworkHelper> networkHelperProvider;
 
   private DaggerCustomApplication_HiltComponents_SingletonC(
@@ -75,15 +82,23 @@ public final class DaggerCustomApplication_HiltComponents_SingletonC extends Cus
   }
 
   private Retrofit retrofit() {
-    return NetworkModel_ProvideRetrofitFactory.provideRetrofit(provideOkHttpClientProvider.get());
+    return NetworkModule_ProvideRetrofitFactory.provideRetrofit(provideOkHttpClientProvider.get());
   }
 
   private ApiService apiService() {
-    return NetworkModel_ProvideApiServiceFactory.provideApiService(provideRetrofitProvider.get());
+    return NetworkModule_ProvideApiServiceFactory.provideApiService(provideRetrofitProvider.get());
   }
 
   private ApiHelperImpl apiHelperImpl() {
     return new ApiHelperImpl(provideApiServiceProvider.get());
+  }
+
+  private AppDatabase appDatabase() {
+    return RoomDBModule_ProvideAppDatabaseFactory.provideAppDatabase(ApplicationContextModule_ProvideContextFactory.provideContext(applicationContextModule), RoomDBModule_ProvideDatabaseNameFactory.provideDatabaseName());
+  }
+
+  private TvShowDao tvShowDao() {
+    return RoomDBModule_ProvideTvShowsDAOFactory.provideTvShowsDAO(provideAppDatabaseProvider.get());
   }
 
   private NetworkHelper networkHelper() {
@@ -96,7 +111,8 @@ public final class DaggerCustomApplication_HiltComponents_SingletonC extends Cus
     this.provideRetrofitProvider = DoubleCheck.provider(new SwitchingProvider<Retrofit>(singletonC, 2));
     this.provideApiServiceProvider = DoubleCheck.provider(new SwitchingProvider<ApiService>(singletonC, 1));
     this.apiHelperImplProvider = DoubleCheck.provider(new SwitchingProvider<ApiHelperImpl>(singletonC, 0));
-    this.networkHelperProvider = DoubleCheck.provider(new SwitchingProvider<NetworkHelper>(singletonC, 4));
+    this.provideAppDatabaseProvider = DoubleCheck.provider(new SwitchingProvider<AppDatabase>(singletonC, 4));
+    this.networkHelperProvider = DoubleCheck.provider(new SwitchingProvider<NetworkHelper>(singletonC, 5));
   }
 
   @Override
@@ -128,8 +144,17 @@ public final class DaggerCustomApplication_HiltComponents_SingletonC extends Cus
      * @deprecated This module is declared, but an instance is not used in the component. This method is a no-op. For more, see https://dagger.dev/unused-modules.
      */
     @Deprecated
-    public Builder networkModel(NetworkModel networkModel) {
-      Preconditions.checkNotNull(networkModel);
+    public Builder networkModule(NetworkModule networkModule) {
+      Preconditions.checkNotNull(networkModule);
+      return this;
+    }
+
+    /**
+     * @deprecated This module is declared, but an instance is not used in the component. This method is a no-op. For more, see https://dagger.dev/unused-modules.
+     */
+    @Deprecated
+    public Builder roomDBModule(RoomDBModule roomDBModule) {
+      Preconditions.checkNotNull(roomDBModule);
       return this;
     }
 
@@ -517,8 +542,12 @@ public final class DaggerCustomApplication_HiltComponents_SingletonC extends Cus
 
     }
 
+    private DataBaseHelperImpl dataBaseHelperImpl() {
+      return new DataBaseHelperImpl(singletonC.tvShowDao());
+    }
+
     private TvShowsRepo tvShowsRepo() {
-      return new TvShowsRepo(singletonC.apiHelperImplProvider.get());
+      return new TvShowsRepo(singletonC.apiHelperImplProvider.get(), dataBaseHelperImpl());
     }
 
     @SuppressWarnings("unchecked")
@@ -604,9 +633,12 @@ public final class DaggerCustomApplication_HiltComponents_SingletonC extends Cus
         return (T) singletonC.retrofit();
 
         case 3: // okhttp3.OkHttpClient 
-        return (T) NetworkModel_ProvideOkHttpClientFactory.provideOkHttpClient();
+        return (T) NetworkModule_ProvideOkHttpClientFactory.provideOkHttpClient();
 
-        case 4: // com.example.daggerhiltexample.network.NetworkHelper 
+        case 4: // com.example.daggerhiltexample.AppDatabase 
+        return (T) singletonC.appDatabase();
+
+        case 5: // com.example.daggerhiltexample.network.NetworkHelper 
         return (T) singletonC.networkHelper();
 
         default: throw new AssertionError(id);
