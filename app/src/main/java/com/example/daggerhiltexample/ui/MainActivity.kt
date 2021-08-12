@@ -2,7 +2,6 @@ package com.example.daggerhiltexample.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
@@ -20,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     private val viewModel: ActivityViewModel by viewModels()
-    lateinit var adapter: TvShowsAdapter
+    private lateinit var adapter: TvShowsAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -32,14 +31,14 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun setUpUI() {
+    private fun setUpUI() {
         binding.tvRecyclerView.adapter = adapter
         binding.tvRecyclerView.layoutManager =
             LinearLayoutManager(this, RecyclerView.VERTICAL, false)
     }
 
-    fun setUpObserver() {
-        viewModel.getTvShows().observe(this, {
+    private fun setUpObserver() {
+        viewModel.getTvShows(2).observe(this, {
             when (it.status) {
                 Status.SUCCESS -> {
                     binding.isLoading = false

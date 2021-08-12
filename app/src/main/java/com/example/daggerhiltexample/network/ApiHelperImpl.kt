@@ -9,6 +9,7 @@ import javax.inject.Singleton
 class ApiHelperImpl @Inject constructor(private val networkService:ApiService): ApiHelper {
 
 
-    override suspend fun getTvShows(): Response<TvShowResponse> = networkService.getMovies()
+    override suspend fun getTvShows(page:Int): Response<TvShowResponse> = networkService.getMovies(page)
+
 
 }

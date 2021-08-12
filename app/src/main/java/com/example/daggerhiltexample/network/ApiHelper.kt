@@ -5,5 +5,5 @@ import retrofit2.Response
 
 interface ApiHelper {
 
-    suspend fun getTvShows(): Response<TvShowResponse>
+    suspend fun getTvShows(page:Int): Response<TvShowResponse>
 }

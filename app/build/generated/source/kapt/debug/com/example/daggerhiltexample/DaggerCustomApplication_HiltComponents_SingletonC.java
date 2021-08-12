@@ -451,12 +451,8 @@ public final class DaggerCustomApplication_HiltComponents_SingletonC extends Cus
 
     }
 
-    private TvShowsRepo tvShowsRepo() {
-      return new TvShowsRepo(singletonC.apiHelperImplProvider.get());
-    }
-
     private ActivityViewModel activityViewModel() {
-      return new ActivityViewModel(tvShowsRepo(), singletonC.networkHelperProvider.get());
+      return new ActivityViewModel(activityRetainedCImpl.tvShowsRepoProvider.get(), singletonC.networkHelperProvider.get());
     }
 
     @SuppressWarnings("unchecked")
@@ -507,6 +503,8 @@ public final class DaggerCustomApplication_HiltComponents_SingletonC extends Cus
     @SuppressWarnings("rawtypes")
     private Provider lifecycleProvider;
 
+    private Provider<TvShowsRepo> tvShowsRepoProvider;
+
     private ActivityRetainedCImpl(DaggerCustomApplication_HiltComponents_SingletonC singletonC) {
       this.singletonC = singletonC;
 
@@ -514,9 +512,14 @@ public final class DaggerCustomApplication_HiltComponents_SingletonC extends Cus
 
     }
 
+    private TvShowsRepo tvShowsRepo() {
+      return new TvShowsRepo(singletonC.apiHelperImplProvider.get());
+    }
+
     @SuppressWarnings("unchecked")
     private void initialize() {
       this.lifecycleProvider = DoubleCheck.provider(new SwitchingProvider<Object>(singletonC, activityRetainedCImpl, 0));
+      this.tvShowsRepoProvider = DoubleCheck.provider(new SwitchingProvider<TvShowsRepo>(singletonC, activityRetainedCImpl, 1));
     }
 
     @Override
@@ -549,6 +552,9 @@ public final class DaggerCustomApplication_HiltComponents_SingletonC extends Cus
         switch (id) {
           case 0: // dagger.hilt.android.internal.managers.ActivityRetainedComponentManager.Lifecycle 
           return (T) ActivityRetainedComponentManager_Lifecycle_Factory.newInstance();
+
+          case 1: // com.example.daggerhiltexample.repo.TvShowsRepo 
+          return (T) activityRetainedCImpl.tvShowsRepo();
 
           default: throw new AssertionError(id);
         }

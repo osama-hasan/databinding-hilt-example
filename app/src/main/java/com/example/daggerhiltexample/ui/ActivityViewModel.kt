@@ -9,6 +9,7 @@ import com.example.daggerhiltexample.repo.TvShowsRepo
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.sample
 import retrofit2.Response
 import javax.inject.Inject
@@ -23,30 +24,15 @@ class ActivityViewModel @Inject constructor(
     private var tvShowsResponse = MutableLiveData<Resource<TvShowResponse>>()
 
 
-    fun getTvShows(): LiveData<Resource<TvShowResponse>> {
 
-        viewModelScope.launch {
-            if (tvShowsResponse.value == null) {
-
-                tvShowsResponse.postValue(Resource.loading(null))
-                if (networkHelper.isNetworkConnected()) {
-                    tvShowsRepo.getTvShows().let {
-                        if (it.isSuccessful){
-                            tvShowsResponse.postValue(Resource.success(it.body()))
-                        }else{
-                            tvShowsResponse.postValue(Resource.error(it.errorBody().toString(),null))
-                        }
-
-                    }
-                } else {
-                    tvShowsResponse.postValue(Resource.error("No Internet Connection",null))
-                }
-
-            }
+    private fun setTvShows(page: Int) = viewModelScope.launch {
+        tvShowsRepo.getTvShows(page).collect {
+            tvShowsResponse.postValue(it)
         }
+    }
 
-
-
+    fun getTvShows(page: Int): MutableLiveData<Resource<TvShowResponse>> {
+        setTvShows(page)
         return tvShowsResponse
     }
 
