@@ -54,6 +54,19 @@
 31-->/Users/certacure/Desktop/DI/app/src/main/AndroidManifest.xml:20:27-74
 32            </intent-filter>
 33        </activity>
-34    </application>
-35
-36</manifest>
+34
+35        <uses-library
+35-->[androidx.window:window:1.0.0-alpha09] /Users/certacure/.gradle/caches/transforms-2/files-2.1/ee0cfc62bae944998a20addd59657560/window-1.0.0-alpha09/AndroidManifest.xml:25:9-27:40
+36            android:name="androidx.window.extensions"
+36-->[androidx.window:window:1.0.0-alpha09] /Users/certacure/.gradle/caches/transforms-2/files-2.1/ee0cfc62bae944998a20addd59657560/window-1.0.0-alpha09/AndroidManifest.xml:26:13-54
+37            android:required="false" />
+37-->[androidx.window:window:1.0.0-alpha09] /Users/certacure/.gradle/caches/transforms-2/files-2.1/ee0cfc62bae944998a20addd59657560/window-1.0.0-alpha09/AndroidManifest.xml:27:13-37
+38        <uses-library
+38-->[androidx.window:window:1.0.0-alpha09] /Users/certacure/.gradle/caches/transforms-2/files-2.1/ee0cfc62bae944998a20addd59657560/window-1.0.0-alpha09/AndroidManifest.xml:28:9-30:40
+39            android:name="androidx.window.sidecar"
+39-->[androidx.window:window:1.0.0-alpha09] /Users/certacure/.gradle/caches/transforms-2/files-2.1/ee0cfc62bae944998a20addd59657560/window-1.0.0-alpha09/AndroidManifest.xml:29:13-51
+40            android:required="false" />
+40-->[androidx.window:window:1.0.0-alpha09] /Users/certacure/.gradle/caches/transforms-2/files-2.1/ee0cfc62bae944998a20addd59657560/window-1.0.0-alpha09/AndroidManifest.xml:30:13-37
+41    </application>
+42
+43</manifest>

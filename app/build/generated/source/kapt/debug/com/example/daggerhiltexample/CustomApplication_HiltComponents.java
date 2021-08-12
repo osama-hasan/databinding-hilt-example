@@ -3,6 +3,7 @@ package com.example.daggerhiltexample;
 import com.example.daggerhiltexample.di.NetworkModel;
 import com.example.daggerhiltexample.ui.ActivityViewModel_HiltModules;
 import com.example.daggerhiltexample.ui.MainActivity_GeneratedInjector;
+import com.example.daggerhiltexample.ui.home.HomeFragment_GeneratedInjector;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;
@@ -205,7 +206,8 @@ public final class CustomApplication_HiltComponents {
       modules = ViewWithFragmentCBuilderModule.class
   )
   @FragmentScoped
-  public abstract static class FragmentC implements FragmentComponent,
+  public abstract static class FragmentC implements HomeFragment_GeneratedInjector,
+      FragmentComponent,
       DefaultViewModelFactories.FragmentEntryPoint,
       ViewComponentManager.ViewWithFragmentComponentBuilderEntryPoint,
       GeneratedComponent {

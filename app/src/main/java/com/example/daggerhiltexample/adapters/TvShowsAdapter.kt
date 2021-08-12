@@ -2,12 +2,14 @@ package com.example.daggerhiltexample.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.daggerhiltexample.model.TvShow
 import com.example.daggerhiltexample.databinding.CustomTvShowLayoutBinding
 
 class TvShowsAdapter(private var shows: List<TvShow>) :
-    RecyclerView.Adapter<TvShowsAdapter.TvShowsViewHolder>() {
+    ListAdapter<TvShow, TvShowsAdapter.TvShowsViewHolder>(DiffCallbacks()) {
 
     private lateinit var binding: CustomTvShowLayoutBinding
 
@@ -22,9 +24,6 @@ class TvShowsAdapter(private var shows: List<TvShow>) :
 
     }
 
-    fun submitData(shows: List<TvShow>) {
-        this.shows = shows
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TvShowsViewHolder {
         binding =
@@ -34,11 +33,17 @@ class TvShowsAdapter(private var shows: List<TvShow>) :
     }
 
     override fun onBindViewHolder(holder: TvShowsViewHolder, position: Int) {
-        holder.bind(shows[position])
+        holder.bind(getItem(position))
     }
 
-    override fun getItemCount(): Int {
-        return shows.size
+    class DiffCallbacks : DiffUtil.ItemCallback<TvShow>() {
+        override fun areItemsTheSame(oldItem: TvShow, newItem: TvShow) = oldItem.id == newItem.id
+
+        override fun areContentsTheSame(oldItem: TvShow, newItem: TvShow) = oldItem == newItem
+
     }
+
 
 }
+
+

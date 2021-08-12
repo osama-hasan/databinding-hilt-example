@@ -6,8 +6,8 @@ import android.view.View;
 import androidx.databinding.DataBinderMapper;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
-import com.example.daggerhiltexample.databinding.ActivityMainBindingImpl;
 import com.example.daggerhiltexample.databinding.CustomTvShowLayoutBindingImpl;
+import com.example.daggerhiltexample.databinding.FragmentHomeBindingImpl;
 import java.lang.IllegalArgumentException;
 import java.lang.Integer;
 import java.lang.Object;
@@ -19,15 +19,15 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DataBinderMapperImpl extends DataBinderMapper {
-  private static final int LAYOUT_ACTIVITYMAIN = 1;
+  private static final int LAYOUT_CUSTOMTVSHOWLAYOUT = 1;
 
-  private static final int LAYOUT_CUSTOMTVSHOWLAYOUT = 2;
+  private static final int LAYOUT_FRAGMENTHOME = 2;
 
   private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(2);
 
   static {
-    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.daggerhiltexample.R.layout.activity_main, LAYOUT_ACTIVITYMAIN);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.daggerhiltexample.R.layout.custom_tv_show_layout, LAYOUT_CUSTOMTVSHOWLAYOUT);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.daggerhiltexample.R.layout.fragment_home, LAYOUT_FRAGMENTHOME);
   }
 
   @Override
@@ -39,17 +39,17 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         throw new RuntimeException("view must have a tag");
       }
       switch(localizedLayoutId) {
-        case  LAYOUT_ACTIVITYMAIN: {
-          if ("layout/activity_main_0".equals(tag)) {
-            return new ActivityMainBindingImpl(component, view);
-          }
-          throw new IllegalArgumentException("The tag for activity_main is invalid. Received: " + tag);
-        }
         case  LAYOUT_CUSTOMTVSHOWLAYOUT: {
           if ("layout/custom_tv_show_layout_0".equals(tag)) {
             return new CustomTvShowLayoutBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for custom_tv_show_layout is invalid. Received: " + tag);
+        }
+        case  LAYOUT_FRAGMENTHOME: {
+          if ("layout/fragment_home_0".equals(tag)) {
+            return new FragmentHomeBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_home is invalid. Received: " + tag);
         }
       }
     }
@@ -109,8 +109,8 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(2);
 
     static {
-      sKeys.put("layout/activity_main_0", com.example.daggerhiltexample.R.layout.activity_main);
       sKeys.put("layout/custom_tv_show_layout_0", com.example.daggerhiltexample.R.layout.custom_tv_show_layout);
+      sKeys.put("layout/fragment_home_0", com.example.daggerhiltexample.R.layout.fragment_home);
     }
   }
 }

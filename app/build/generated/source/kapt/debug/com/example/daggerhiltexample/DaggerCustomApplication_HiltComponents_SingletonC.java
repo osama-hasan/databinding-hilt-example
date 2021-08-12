@@ -18,6 +18,7 @@ import com.example.daggerhiltexample.repo.TvShowsRepo;
 import com.example.daggerhiltexample.ui.ActivityViewModel;
 import com.example.daggerhiltexample.ui.ActivityViewModel_HiltModules_KeyModule_ProvideFactory;
 import com.example.daggerhiltexample.ui.MainActivity;
+import com.example.daggerhiltexample.ui.home.HomeFragment;
 import dagger.hilt.android.ActivityRetainedLifecycle;
 import dagger.hilt.android.internal.builders.ActivityComponentBuilder;
 import dagger.hilt.android.internal.builders.ActivityRetainedComponentBuilder;
@@ -356,6 +357,10 @@ public final class DaggerCustomApplication_HiltComponents_SingletonC extends Cus
       this.activityCImpl = activityCImpl;
 
 
+    }
+
+    @Override
+    public void injectHomeFragment(HomeFragment homeFragment) {
     }
 
     @Override
