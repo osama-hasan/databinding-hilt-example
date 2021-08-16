@@ -10,7 +10,7 @@ interface TvShowDao {
     @Query("SELECT * FROM tv_show")
     fun getAll(): Flow<List<TvShow>>
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(vararg tvShows: TvShow)
 
 
@@ -20,4 +20,7 @@ interface TvShowDao {
 
     @Delete
     fun delete(tvShow: TvShow )
+
+    @Query("DELETE FROM tv_show")
+    suspend fun clearAll()
 }

@@ -402,6 +402,25 @@
                     }
                 },
                 {
+                    "source": "/Users/certacure/.gradle/caches/transforms-2/files-2.1/41d2a7e72d7abdca5f2c5ede687d2125/recyclerview-1.2.0/res/values/values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,111,170,218,274,349,425,497,563",
+                        "endLines": "2,3,4,5,6,7,8,9,38",
+                        "endColumns": "55,58,47,55,74,75,71,65,24",
+                        "endOffsets": "106,165,213,269,344,420,492,558,2084"
+                    },
+                    "to": {
+                        "startLines": "395,747,748,749,757,758,759,1078,8606",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "18754,40706,40765,40813,41480,41555,41631,62332,514906",
+                        "endLines": "395,747,748,749,757,758,759,1078,8634",
+                        "endColumns": "55,58,47,55,74,75,71,65,24",
+                        "endOffsets": "18805,40760,40808,40864,41550,41626,41698,62393,516427"
+                    }
+                },
+                {
                     "source": "/Users/certacure/.gradle/caches/transforms-2/files-2.1/48f2d4515c60d2dbe27833bd5af91e68/navigation-common-2.4.0-alpha06/res/values/values.xml",
                     "from": {
                         "startLines": "2,15,21,27,30",
@@ -454,25 +473,6 @@
                         "startOffsets": "69976,71445,71668,82174",
                         "endColumns": "56,69,37,41",
                         "endOffsets": "70028,71510,71701,82211"
-                    }
-                },
-                {
-                    "source": "/Users/certacure/.gradle/caches/transforms-2/files-2.1/d2f5541281a50551b9fc3a84f94f0fab/recyclerview-1.1.0/res/values/values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,111,170,218,274,349,425,497,563",
-                        "endLines": "2,3,4,5,6,7,8,9,38",
-                        "endColumns": "55,58,47,55,74,75,71,65,24",
-                        "endOffsets": "106,165,213,269,344,420,492,558,2084"
-                    },
-                    "to": {
-                        "startLines": "395,747,748,749,757,758,759,1078,8606",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "18754,40706,40765,40813,41480,41555,41631,62332,514906",
-                        "endLines": "395,747,748,749,757,758,759,1078,8634",
-                        "endColumns": "55,58,47,55,74,75,71,65,24",
-                        "endOffsets": "18805,40760,40808,40864,41550,41626,41698,62393,516427"
                     }
                 },
                 {

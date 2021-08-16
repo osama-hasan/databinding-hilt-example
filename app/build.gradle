@@ -103,5 +103,10 @@ dependencies {
     // optional - Paging 3 Integration
     implementation("androidx.room:room-paging:2.4.0-alpha04")
 
+
+
+
+    implementation 'androidx.paging:paging-runtime-ktx:3.0.1'
+
     
 }

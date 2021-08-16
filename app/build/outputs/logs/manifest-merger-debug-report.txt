@@ -15,6 +15,8 @@ MERGED from [androidx.navigation:navigation-runtime-ktx:2.4.0-alpha06] /Users/ce
 MERGED from [androidx.navigation:navigation-ui:2.4.0-alpha06] /Users/certacure/.gradle/caches/transforms-2/files-2.1/db999f26c3fee875f8b694f00fab77cc/navigation-ui-2.4.0-alpha06/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-runtime:2.4.0-alpha06] /Users/certacure/.gradle/caches/transforms-2/files-2.1/f98dbe647a4a3d755b9f679f1a638247/navigation-runtime-2.4.0-alpha06/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity-ktx:1.2.3] /Users/certacure/.gradle/caches/transforms-2/files-2.1/3c6c4b5ca92e5eab5645f8b7e51c230b/activity-ktx-1.2.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.paging:paging-runtime-ktx:3.0.1] /Users/certacure/.gradle/caches/transforms-2/files-2.1/f8bef368b7bac5d053a7930ab9cd9884/paging-runtime-ktx-3.0.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.paging:paging-runtime:3.0.1] /Users/certacure/.gradle/caches/transforms-2/files-2.1/3ab79ae9f93c70097e616b59e5aa6cdc/paging-runtime-3.0.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.4.0-alpha06] /Users/certacure/.gradle/caches/transforms-2/files-2.1/22bbaa90b810c77962912c648fcd8b2b/navigation-common-ktx-2.4.0-alpha06/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-common:2.4.0-alpha06] /Users/certacure/.gradle/caches/transforms-2/files-2.1/48f2d4515c60d2dbe27833bd5af91e68/navigation-common-2.4.0-alpha06/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core-ktx:1.6.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/19019abb5cd3433e3ce4a5777b8bb084/core-ktx-1.6.0/AndroidManifest.xml:2:1-9:12
@@ -48,11 +50,11 @@ MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/certacur
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/2efb652c05343a51711ec0b156aa41da/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/f3e48e87aa296edfb4b94a4a30cd1ac2/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.media:media:1.0.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/48a6c5d3e896a713befe13ccf34276e3/media-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/d2f5541281a50551b9fc3a84f94f0fab/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/4c4d09813ffb09b1ad49a709e49736aa/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/44d11f8e1393000baee0ebf4f44c6ee9/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/c8f9d44c19952060896635a72a95c173/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/certacure/.gradle/caches/transforms-2/files-2.1/cfb281111cc5e1507512bb41f61db18d/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.2.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/41d2a7e72d7abdca5f2c5ede687d2125/recyclerview-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.customview:customview:1.1.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/56260029245539875cdc6a0547086988/customview-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.transition:transition:1.3.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/b9348513323ac21e7b594e1c81f91bde/transition-1.3.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core:1.6.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/18c8b9f4b3f4f8cba9bd9a06f3164a63/core-1.6.0/AndroidManifest.xml:17:1-26:12
@@ -176,6 +178,10 @@ MERGED from [androidx.navigation:navigation-runtime:2.4.0-alpha06] /Users/certac
 MERGED from [androidx.navigation:navigation-runtime:2.4.0-alpha06] /Users/certacure/.gradle/caches/transforms-2/files-2.1/f98dbe647a4a3d755b9f679f1a638247/navigation-runtime-2.4.0-alpha06/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity-ktx:1.2.3] /Users/certacure/.gradle/caches/transforms-2/files-2.1/3c6c4b5ca92e5eab5645f8b7e51c230b/activity-ktx-1.2.3/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity-ktx:1.2.3] /Users/certacure/.gradle/caches/transforms-2/files-2.1/3c6c4b5ca92e5eab5645f8b7e51c230b/activity-ktx-1.2.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.paging:paging-runtime-ktx:3.0.1] /Users/certacure/.gradle/caches/transforms-2/files-2.1/f8bef368b7bac5d053a7930ab9cd9884/paging-runtime-ktx-3.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.paging:paging-runtime-ktx:3.0.1] /Users/certacure/.gradle/caches/transforms-2/files-2.1/f8bef368b7bac5d053a7930ab9cd9884/paging-runtime-ktx-3.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.paging:paging-runtime:3.0.1] /Users/certacure/.gradle/caches/transforms-2/files-2.1/3ab79ae9f93c70097e616b59e5aa6cdc/paging-runtime-3.0.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.paging:paging-runtime:3.0.1] /Users/certacure/.gradle/caches/transforms-2/files-2.1/3ab79ae9f93c70097e616b59e5aa6cdc/paging-runtime-3.0.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-common-ktx:2.4.0-alpha06] /Users/certacure/.gradle/caches/transforms-2/files-2.1/22bbaa90b810c77962912c648fcd8b2b/navigation-common-ktx-2.4.0-alpha06/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-common-ktx:2.4.0-alpha06] /Users/certacure/.gradle/caches/transforms-2/files-2.1/22bbaa90b810c77962912c648fcd8b2b/navigation-common-ktx-2.4.0-alpha06/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-common:2.4.0-alpha06] /Users/certacure/.gradle/caches/transforms-2/files-2.1/48f2d4515c60d2dbe27833bd5af91e68/navigation-common-2.4.0-alpha06/AndroidManifest.xml:20:5-22:41
@@ -242,8 +248,6 @@ MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/certacure/.gra
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/f3e48e87aa296edfb4b94a4a30cd1ac2/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.media:media:1.0.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/48a6c5d3e896a713befe13ccf34276e3/media-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.media:media:1.0.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/48a6c5d3e896a713befe13ccf34276e3/media-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/d2f5541281a50551b9fc3a84f94f0fab/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/d2f5541281a50551b9fc3a84f94f0fab/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/4c4d09813ffb09b1ad49a709e49736aa/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/4c4d09813ffb09b1ad49a709e49736aa/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/44d11f8e1393000baee0ebf4f44c6ee9/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
@@ -252,6 +256,8 @@ MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/cert
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/c8f9d44c19952060896635a72a95c173/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/certacure/.gradle/caches/transforms-2/files-2.1/cfb281111cc5e1507512bb41f61db18d/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/certacure/.gradle/caches/transforms-2/files-2.1/cfb281111cc5e1507512bb41f61db18d/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.2.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/41d2a7e72d7abdca5f2c5ede687d2125/recyclerview-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.2.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/41d2a7e72d7abdca5f2c5ede687d2125/recyclerview-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.1.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/56260029245539875cdc6a0547086988/customview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.1.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/56260029245539875cdc6a0547086988/customview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.transition:transition:1.3.0] /Users/certacure/.gradle/caches/transforms-2/files-2.1/b9348513323ac21e7b594e1c81f91bde/transition-1.3.0/AndroidManifest.xml:20:5-22:41

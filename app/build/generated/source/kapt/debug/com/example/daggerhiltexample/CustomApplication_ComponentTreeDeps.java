@@ -78,12 +78,12 @@ import hilt_aggregated_deps._dagger_hilt_android_internal_modules_HiltWrapper_Ac
         _dagger_hilt_android_internal_modules_ApplicationContextModule.class,
         _dagger_hilt_android_internal_modules_HiltWrapper_ActivityModule.class,
         _com_example_daggerhiltexample_di_NetworkModule.class,
-        _com_example_daggerhiltexample_CustomApplication_GeneratedInjector.class,
-        _com_example_daggerhiltexample_ui_MainActivity_GeneratedInjector.class,
-        _com_example_daggerhiltexample_di_RoomDBModule.class,
         _com_example_daggerhiltexample_ui_home_HomeFragment_GeneratedInjector.class,
+        _com_example_daggerhiltexample_CustomApplication_GeneratedInjector.class,
         _com_example_daggerhiltexample_ui_ActivityViewModel_HiltModules_BindsModule.class,
-        _com_example_daggerhiltexample_ui_ActivityViewModel_HiltModules_KeyModule.class
+        _com_example_daggerhiltexample_ui_ActivityViewModel_HiltModules_KeyModule.class,
+        _com_example_daggerhiltexample_ui_MainActivity_GeneratedInjector.class,
+        _com_example_daggerhiltexample_di_RoomDBModule.class
     }
 )
 class CustomApplication_ComponentTreeDeps {
